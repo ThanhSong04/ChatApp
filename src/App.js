@@ -9,10 +9,8 @@ function App() {
   const [messageindex, setMessageindex] = useState("");
   const [id, setId] = useState();
   const [isEdit, setIsEdit] = useState(false);
-
   const socketRef = useRef();
   const messagesEnd = useRef();
-  const sendbtn = useRef();
   const textareaRef = useRef();
 
   useEffect(() => {
@@ -108,9 +106,7 @@ function App() {
             onChange={handleChange}
             placeholder="Nhập tin nhắn ..."
           />
-          <button ref={sendbtn} onClick={sendMessage}>
-            Edit
-          </button>
+          <button onClick={sendMessage}>Edit</button>
         </div>
       ) : (
         <div className="send-box">
@@ -121,9 +117,7 @@ function App() {
             onChange={handleChange}
             placeholder="Nhập tin nhắn ..."
           />
-          <button ref={sendbtn} onClick={sendMessage}>
-            Send
-          </button>
+          <button onClick={sendMessage}>Send</button>
         </div>
       )}
     </div>
