@@ -38,8 +38,9 @@ function App() {
       if (!isEdit) {
         socketRef.current.emit("sendDataClient", msg);
       } else {
-        mess[messageindex].content = message;
-        setMess(mess);
+        const newArray = [...mess];
+        newArray[messageindex].content = message;
+        setMess(newArray);
         setIsEdit(false);
       }
       setMessage("");
